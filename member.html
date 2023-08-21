@@ -1,397 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Komunitas Majalengka Developer">
+  <meta name="author" content="Majalengka Dev">
+  <meta name="keywords" content="majalengka, majalengka dev, majalengka developer" />
+  <link rel="icon" href="./img/logo.svg">
 
-    <title>Majalengka Developers</title>
+  <title>Member Komunitas Majalengka Dev</title>
 
-    <!-- Bootstrap core CSS -->
+  <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="css/scrolling-nav.css" rel="stylesheet">
 
   <!-- fontawesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/v4-shims.min.css" integrity="sha256-DRxbpLKdtC2t9h+ecwQzH6g1/nMruwKCKtoXqaY8IV8=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+    integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/v4-shims.min.css"
+    integrity="sha256-DRxbpLKdtC2t9h+ecwQzH6g1/nMruwKCKtoXqaY8IV8=" crossorigin="anonymous" />
 
-  </head>
-    <body id="page-top">
+</head>
 
-     <!-- Navigation -->
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-        <div class="container">
-          <a class="navbar-brand js-scroll-trigger" href="/">MajalengkaDev</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="/member.html">Anggota</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="/gallery.html">Gallery</a>
-              </li>
-            </ul>
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="/">MajalengkaDev</a>
+    </div>
+  </nav>
+
+  <header class="bg-primary text-white">
+    <div class="container text-center">
+      <h1>Anggota Majalengka Dev</h1>
+    </div>
+  </header>
+
+
+  <section id="anggota" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="row" id="member">
           </div>
         </div>
-      </nav>
+      </div>
+    </div>
+  </section>
 
-      <header class="bg-primary text-white">
-        <div class="container text-center">
-          <h1>Anggota Majalengka Developers</h1>
-        </div>
-      </header>
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Majalengka Dev 2023</p>
+    </div>
+    <!-- /.container -->
+  </footer>
 
-    
-      <section id="anggota" class="bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2>Anggota</h2>
-              <p class="lead">Para Anggota Majalengka Developer</p>
-              <div class="row">
-                <div class="col-md-4 mb-4">
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/scrolling-nav.js"></script>
+
+  <script>
+    fetch('./member.json')
+      .then(response => response.json())
+      .then(data => {
+        var items = '';
+
+        data['members'].forEach(listItem => {
+
+          const item = `<div class="col-md-4 mb-4">
                   <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
+                    <img class="card-img-top" src="https://www.gravatar.com/avatar/${listItem.emailHash}?s=640&d=robohash" alt="Card image cap">
                     <div class="card-body text-center">
-                      <h6 class="card-title">Riyadi</h6>
+                      <h6 class="card-title">${listItem.name}</h6>
                       <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="https://www.linkedin.com/in/riyadi-rb-03804a106" class="btn btn-sm btn-light"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="https://github.com/xrb21" class="btn btn-sm btn-light"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="http://ercode.id" class="btn btn-sm btn-light"><i class="fa fa-link"></i></a>
+                        <a target="_blank" href="${listItem.linkedin}" class="btn btn-sm btn-light"><i class="fa fa-linkedin"></i></a>
+                        <a target="_blank" href="${listItem.github}" class="btn btn-sm btn-light"><i class="fa fa-github"></i></a>
+                        <a target="_blank" href="${listItem.website}" class="btn btn-sm btn-light"><i class="fa fa-link"></i></a>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Adi Rizky</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="https://www.linkedin.com/in/adirizky54" class="btn btn-sm btn-light"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="https://github.com/adirizky54" class="btn btn-sm btn-light"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Ryan Aprianto</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Azis Ramdhan Darojat</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="https://www.linkedin.com/in/azisramdhandarojat/" class="btn btn-sm btn-light"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="https://github.com/azisramdhan" class="btn btn-sm btn-light"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Noval ramadhan</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="https://www.linkedin.com/in/abdul-aziz-naufal-ramadhan-0b952b18b" class="btn btn-sm btn-light"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="https://github.com/rnaufal32" class="btn btn-sm btn-light"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="https://aanrstudio.site" class="btn btn-sm btn-light"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Ihwan Dede</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="https://www.linkedin.com/in/ihwanid" class="btn btn-sm btn-light"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="https://github.com/ihwanid" class="btn btn-sm btn-light"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Eriga Syifaudin Al-Mansur</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="https://www.mainkit.id" class="btn btn-sm btn-light"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Henhen Imam Muldani</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="https://www.linkedin.com/in/henhen-imam-muldani-b312b1174/" class="btn btn-sm btn-light"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="http://github.com/imammuldani/" class="btn btn-sm btn-light"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">AjiYakin</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="https://linkedin.com/in/ajiyakin" class="btn btn-sm btn-light"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="https://github.com/ajiyakin" class="btn btn-sm btn-light"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="https://ajiyakin.github.io/blog" class="btn btn-sm btn-light"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Abdul Aris R</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="https://www.linkedin.com/in/abdularis" class="btn btn-sm btn-light"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="https://github.com/abdularis" class="btn btn-sm btn-light"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Dani Ramadan</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="https://Kangramadan.com" class="btn btn-sm btn-light"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Patranto Bagus Prabowo</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="https://github.com/floorvest" class="btn btn-sm btn-light"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Dede Iyan Supardi</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="https://www.linkedin.com/in/efreethinx" class="btn btn-sm btn-light"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="https://github.com/efreethinx" class="btn btn-sm btn-light"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="http://efreethinx.blogspot.com" class="btn btn-sm btn-light"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Iwan Herawan</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="https://www.linkedin.com/in/iwan-herawan-534b03b7" class="btn btn-sm btn-light"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="https://github.com/iwan-majalengka" class="btn btn-sm btn-light"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">usup suparma</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="https://www.linkedin.com/in/usup-suparma-512672130/" class="btn btn-sm btn-light"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="https://github.com/usupsuparma" class="btn btn-sm btn-light"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Agis R Herdiana </h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="https://linkedin.com/in/agisrh" class="btn btn-sm btn-light"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="https://github.com/agisrh" class="btn btn-sm btn-light"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Irwan Hardiansyah</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Dinar Permadi</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="https://www.linkedin.com/in/narr07" class="btn btn-sm btn-light"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="https://github.com/narr07" class="btn btn-sm btn-light"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="http://dinarpermadi.web.id/" class="btn btn-sm btn-light"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Tryo Mastryana</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Irfan Fauzi rahmatullah </h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="http://irfan-fauzi.com" class="btn btn-sm btn-light"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Ariev27</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="https://gitlab.com/Ariev27" class="btn btn-sm btn-light"><i class="fa fa-gitlab"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Agung Maulana</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="https://github.com/Fakkuroqobah" class="btn btn-sm btn-light"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Alan Agus Nawan</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="https://gitlab.com/alanagusnawan" class="btn btn-sm btn-light"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                    <img class="card-img-top" src="./img/baseline-person-24px.svg" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title text-center">Arief Luthfi Aulia</h6>
-                      <div class="btn-group btn-group-sm d-flex justify-content-center" role="group">
-                        <a target="_blank" href="https://www.linkedin.com/in/ariefluthfiaulia" class="btn btn-sm btn-light"><i class="fa fa-linkedin"></i></a>
-                        <a target="_blank" href="https://github.com/ariefluthfiaulia" class="btn btn-sm btn-light"><i class="fa fa-github"></i></a>
-                        <a target="_blank" href="" class="btn btn-sm btn-light disabled"><i class="fa fa-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+                </div>`
 
-      <!-- Footer -->
-      <footer class="py-5 bg-dark">
-        <div class="container">
-          <p class="m-0 text-center text-white">Copyright &copy; MajalengkaDev 2019</p>
-        </div>
-        <!-- /.container -->
-      </footer>
-    
-      <!-- Bootstrap core JavaScript -->
-      <script src="vendor/jquery/jquery.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    
-      <!-- Plugin JavaScript -->
-      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    
-      <!-- Custom JavaScript for this theme -->
-      <script src="js/scrolling-nav.js"></script>
+          items += item;
+        });
 
-  </body>
+        document.getElementById('member').innerHTML = '<div class="row">' + items + '</div>';
+      });
+
+
+  </script>
+
+</body>
 
 </html>
